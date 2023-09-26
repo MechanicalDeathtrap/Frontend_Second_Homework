@@ -1,0 +1,320 @@
+@mixin position($top-bottom: 52px, $sides: 52px)
+  padding: $top-bottom $sides
+
+@mixin font-properties($font-size: 16px, $font-weight: 400, $line-height: 26px)
+  font-size: $font-size
+  font-weight: $font-weight
+  line-height: $line-height
+
+$grey: #D0D5DD
+$background-color: #F9FAFB
+
+*
+  margin: 0
+  padding: 0
+  list-style: none
+  text-decoration: none
+  box-sizing: border-box
+  font-family: Inter, sans-serif
+  font-style: normal
+  color: #282828
+
+header
+  @include font-properties(14px, 600, 24px)
+
+h6
+  @include font-properties(20px, 600, 28px)
+
+h4
+  @include font-properties(42px, 600, 54px)
+  letter-spacing: -0.4px
+
+h3
+  @include font-properties(54px, 600, 62px)
+  align-self: stretch
+  letter-spacing: -1px
+
+input
+  border: none
+
+.container
+  @include position()
+
+.navigation-bar
+  @include position(16px)
+  display: flex
+  justify-content: space-between
+
+
+.navigation
+  @include position(10px, 0)
+
+  &__item:not(:last-child)
+    margin-right: 40px
+    align-items: center
+
+  &__item-icon
+    vertical-align: middle
+
+.icons
+  display: flex
+  @include position(10px,0)
+
+  &__item:not(:last-child)
+    margin-right: 20px
+
+
+.content-container
+  position: relative
+  background-color: $background-color
+
+  &__inners
+    display: flex
+
+.container__info
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: flex-start
+  width: 488px
+
+
+.info__text
+  display: block
+
+  &-main
+    margin-bottom: 28px
+    display: grid
+
+  &-main span
+    @include font-properties($font-weight: 600)
+
+
+  &-main p
+    @include font-properties(18px, 400, 30px)
+    align-self: stretch
+
+.info__text a
+    @include font-properties(18px, 600, 32px)
+    letter-spacing: -0.4px
+    border-bottom: 1px solid
+
+
+.container__image
+  margin-right: 82px
+
+.content-container__arrows
+  display: flex
+  position: absolute
+  bottom: 320px
+  margin: 0 28px
+
+  //:(
+.arrows__right-button
+  position: absolute
+  left: 1367px
+
+.arrows__left-button
+  transform: rotateZ(180deg)
+
+.brands-container
+  position: relative
+
+.brands-content
+  border-top: 1px solid $grey
+  border-bottom: 1px solid $grey
+
+.logos
+  display: flex
+  justify-content: center
+  align-items: center
+  margin: 56px 0
+
+  &__item
+    margin-right: 48px
+
+.logo-arrows
+  bottom: 95px
+  left: 10px
+
+
+.cards
+  display: flex
+  justify-content: center
+
+  &__item:not(:last-child)
+    margin-right: 32px
+
+.card-info
+  text-align: center
+  margin: 16px 32px 0 0
+
+  &__span
+    color: #5F6980
+
+.container-inners
+  display: flex
+  align-self: stretch
+  gap: 114px
+  background-color: $background-color
+
+.sale-info
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: flex-start
+  gap: 32px
+  align-self: stretch
+
+
+.sale-text p
+  margin-bottom: 24px
+  @include font-properties(18px,400, 30px)
+
+.sale-text span
+  margin-bottom: 8px
+  @include font-properties($font-weight: 600)
+
+.sale-text h5
+  @include font-properties(34px, 600, 40px)
+  letter-spacing: -0.4px
+
+.sale-button
+  background-color: #282828
+  display: flex
+  padding: 10px 24px
+  justify-content: center
+  align-items: center
+  gap: 4px
+
+  &__text
+    color: #FFF
+    text-align: center
+    @include font-properties(18px, 600, 32px)
+    letter-spacing: -0.4px
+
+.container-info
+  justify-content: center
+  align-items: center
+  display: flex
+  flex-direction: column
+  padding-bottom: 79px
+  padding-top: 87px
+  border: 1px solid $grey
+  border-radius: 10px
+  flex-shrink: 0
+
+.info__text
+  display: inline-flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+
+.info__text span
+  @include font-properties(18px, 400, 30px)
+  margin-bottom: 24px
+
+.form-inners
+  display: flex
+  align-items: center
+  border-bottom: 1px solid $grey
+  height: 52px
+  width: 100%
+
+.form
+  color: #9D9FA1
+  width: 100%
+  margin: 0 8px
+
+.form-button
+  @include font-properties(16px, 600, 28px)
+  background-color: white
+  border: none
+
+.banner
+
+  &__container
+    display: flex
+    flex-direction: column
+    align-items: center
+
+  &__inners
+    position: relative
+
+    &__info
+      position: absolute
+      bottom: 170px
+      left: 430px
+      justify-content: center
+      align-items: center
+      display: inline-flex
+      flex-direction: column
+
+.info-description
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+
+  &__title
+    color: white
+    text-align: center
+
+  &__text
+    @include font-properties(18px, 400, 30px)
+    text-align: center
+    color: white
+    margin-bottom: 24px
+
+  &__button
+    @include font-properties(18px, 600, 32px)
+    letter-spacing: -0.4px
+    border-bottom: 1px solid
+    color: white
+
+.footer
+
+  &__container
+    background-color: $background-color
+    padding-top: 72px
+
+    padding-bottom: 32px
+
+  &__content
+    display: flex
+
+.content__left
+  display: flex
+  flex-direction: column
+
+.left__description
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  align-self: stretch
+  margin-bottom: 24px
+
+.description__image
+  margin-bottom: 16px
+
+.description__text
+  align-self: stretch
+  color: #475467
+
+.media-icon:not(:last-child)
+  margin-right: 16px
+
+.footer
+  &__content
+    gap: 384px
+
+    &__columns
+      display: flex
+      justify-content: flex-end
+      align-items: flex-start
+
+
+.column
+
+
+
