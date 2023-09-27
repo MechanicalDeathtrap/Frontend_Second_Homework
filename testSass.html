@@ -21,7 +21,7 @@
             <span class="navigation__item">Shop</span>
             <span class="navigation__item">
                 Product
-                <img src="./images/chevron-down.svg" alt="arrow" class="navigation__item-icon">
+                <img src="./images/chevron-down.svg" alt="arrow">
             </span>
             <span class="navigation__item">Pages</span>
         </nav>
@@ -43,7 +43,7 @@
 </header>
 
 <main>
-    <div class="content-container">
+    <section class="content-container">
         <div class="content-container__inners">
             <div class="container__image">
                 <img src="./images/Paste%20image.svg" alt="paste-image">
@@ -51,13 +51,15 @@
             <div class="container__info">
                 <div class="info__text">
                     <div class="info__text-main">
-                        <span>IKIGAI</span>
+                        <span class="brand-title">IKIGAI</span>
                         <h3>Leather bags
                             <br>
                             worth hugging.</h3>
                         <p>Keep your everyday style chic and on-trend with our selection 20+ styles to choose from.</p>
                     </div>
-                    <a href="" class="info-text__button">See Collection</a>
+                    <div class="info__text-button">
+                        <a href="">See Collection</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -72,8 +74,8 @@
 
             </div>
         </div>
-    </div>
-    <div class="brands-container container">
+    </section>
+    <section class="brands-container container">
         <div class="brands-content">
             <div class="logos">
                 <div class="logos__item">
@@ -106,8 +108,8 @@
 
             </div>
         </div>
-    </div>
-    <div class="banner-grid container">
+    </section>
+    <section class="banner-grid container">
         <div class="cards">
             <div class="cards__item">
                 <div class="card-image">
@@ -137,15 +139,15 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="sale-container container">
+    </section>
+    <section class="sale-container container">
         <div class="container-inners">
             <div class="sale-image">
                 <img src="./images/sale%20image.svg" alt="sale">
             </div>
             <div class="sale-info">
                 <div class="sale-text">
-                    <span>EXLUSIVE</span>
+                    <span class="brand-title">EXLUSIVE</span>
                     <h3>50% OFF</h3>
                     <p>Sed ut perspiciatis unde omnis iste natus error sit
                         <br>
@@ -157,8 +159,8 @@
                 </button>
             </div>
         </div>
-    </div>
-    <div class="form-container container">
+    </section>
+    <section class="form-container container">
         <div class="container-info">
             <div class="info__text">
                 <h4>Join our newsletter</h4>
@@ -170,8 +172,8 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="banner__container container">
+    </section>
+    <section class="banner__container container">
         <div class="banner__inners">
             <div class="banner__inners__image">
                 <img src="./images/banner.svg" alt="banner">
@@ -193,11 +195,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </main>
 <footer class="footer__container container">
     <div class="footer__content">
-        <div class="content__left">
+        <div class="footer-top">
             <div class="left__description">
                 <img src="./images/Branding.svg" alt="logo" class="description__image">
                 <span class="description__text">Phosf luorescently engage worldwide
@@ -211,19 +213,21 @@
                 <img src="./images/mail.svg" alt="mail" class="media-icon">
             </div>
         </div>
-        <div class="content__columns">
+        <div class="footer__list">
             <div class="column">
                 <ul class="list-column">
-                    <li class="column__item"><span>Product</span></li>
-                    <li class="column__item">Learn</li>
-                    <li class="column__item">Plugins</li>
-                    <li class="column__item">Gallery</li>
-                    <li class="column__item">Pricing</li>
+                    <li class="column__item first-item"><span>Product</span></li>
+                    <ul class="inner-list">
+                        <li class="column__item">Learn</li>
+                        <li class="column__item">Plugins</li>
+                        <li class="column__item">Gallery</li>
+                        <li class="column__item">Pricing</li>
+                    </ul>
                 </ul>
             </div>
             <div class="column">
                 <ul class="list-column">
-                    <li class="column__item"><span>Information</span></li>
+                    <li class="column__item first-item"><span>Information</span></li>
                     <li class="column__item">Privacy</li>
                     <li class="column__item">Cookies</li>
                     <li class="column__item">Terms</li>
@@ -232,7 +236,7 @@
             </div>
             <div class="column">
                 <ul class="list-column">
-                    <li class="column__item"><span>Support</span></li>
+                    <li class="column__item first-item"><span>Support</span></li>
                     <li class="column__item">Updates</li>
                     <li class="column__item">Discord</li>
                     <li class="column__item">Startups</li>
@@ -241,12 +245,15 @@
             </div>
         </div>
     </div>
-    <div class="footer__bottom"><span class="bottom-text"></span>
-        <div class="buttons">
+    <div class="footer__bottom">
+        <span class="bottom-text">© 2088 Nayzak Design</span>
+        <div class="bottom-buttons">
             <div class="language">
                 <img src="./images/Flags.svg" alt="flag">
-                <span>English</span>
-                <img src="./images/chevron-down.svg" alt="arrow">
+                <div class="language-left">
+                    <span>English</span>
+                    <img src="./images/chevron-down.svg" alt="arrow">
+                </div>
             </div>
             <div class="currency">
                 <span>USD</span>

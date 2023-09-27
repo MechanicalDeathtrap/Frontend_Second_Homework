@@ -1,13 +1,30 @@
 @mixin position($top-bottom: 52px, $sides: 52px)
   padding: $top-bottom $sides
 
+@mixin position-mobile($top-bottom: 8px, $sides: 16px)
+  padding: $top-bottom $sides
+
 @mixin font-properties($font-size: 16px, $font-weight: 400, $line-height: 26px)
   font-size: $font-size
   font-weight: $font-weight
   line-height: $line-height
 
+@mixin device ($breakpoint)
+  @if $breakpoint == desktop
+    @media (min-width: $breakpoint-desktop-min > 1024)
+      @content
+
+  @if $breakpoint == mobile
+    @media (max-width: $breakpoint-mobile-max < 1024)
+      @content
+
+$breakpoint-desktop-min: 1024px
+$breakpoint-mobile-max: 1024px
 $grey: #D0D5DD
 $background-color: #F9FAFB
+$footer-color: #5F6980
+
+
 
 *
   margin: 0
@@ -37,32 +54,52 @@ h3
 input
   border: none
 
+a
+  @include font-properties(18px, 600, 32px)
+  letter-spacing: -0.4px
+  border-bottom: 1px solid
+
 .container
-  @include position()
+  @include device(desktop)
+    @include position()
+
+    &__info
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: flex-start
+      width: 488px
+
+    &__image
+      margin-right: 82px
+
+  @include device(mobile)
+    @include position-mobile()
+// --------
+
 
 .navigation-bar
+
   @include position(16px)
   display: flex
   justify-content: space-between
 
 
+
 .navigation
   @include position(10px, 0)
+  display: flex
+  align-items: center
+  gap: 40px
 
-  &__item:not(:last-child)
-    margin-right: 40px
+  &__item
+    display: flex
     align-items: center
 
-  &__item-icon
-    vertical-align: middle
-
 .icons
-  display: flex
-  @include position(10px,0)
-
-  &__item:not(:last-child)
-    margin-right: 20px
-
+  display: inline-flex
+  align-items: center
+  gap: 20px
 
 .content-container
   position: relative
@@ -71,37 +108,27 @@ input
   &__inners
     display: flex
 
-.container__info
-  display: flex
-  flex-direction: column
-  justify-content: center
-  align-items: flex-start
-  width: 488px
+.info
 
+  &__text
+    display: flex
+    flex-direction: column
+    gap: 28px
 
-.info__text
-  display: block
+    &-main
+      display: flex
+      flex-direction: column
 
-  &-main
-    margin-bottom: 28px
-    display: grid
+    &-main p
+      @include font-properties(18px, 400, 30px)
+      align-self: stretch
 
-  &-main span
-    @include font-properties($font-weight: 600)
+  &__text-button
+    display: flex
+    align-self: flex-start
 
-
-  &-main p
-    @include font-properties(18px, 400, 30px)
-    align-self: stretch
-
-.info__text a
-    @include font-properties(18px, 600, 32px)
-    letter-spacing: -0.4px
-    border-bottom: 1px solid
-
-
-.container__image
-  margin-right: 82px
+.brand-title
+  @include font-properties($font-weight: 600)
 
 .content-container__arrows
   display: flex
@@ -110,12 +137,14 @@ input
   margin: 0 28px
 
   //:(
-.arrows__right-button
-  position: absolute
-  left: 1367px
+.arrows
 
-.arrows__left-button
-  transform: rotateZ(180deg)
+  &__right-button
+    position: absolute
+    left: 1367px
+
+  &__left-button
+    transform: rotateZ(180deg)
 
 .brands-container
   position: relative
@@ -137,7 +166,7 @@ input
   bottom: 95px
   left: 10px
 
-
+//:(
 .cards
   display: flex
   justify-content: center
@@ -277,13 +306,26 @@ input
   &__container
     background-color: $background-color
     padding-top: 72px
-
     padding-bottom: 32px
 
   &__content
     display: flex
+    gap: 384px
+    margin-bottom: 72px
 
-.content__left
+  &__list
+    gap: 120px
+    display: flex
+    justify-content: flex-end
+    align-items: flex-start
+
+  &__bottom
+    padding-top: 24px
+    border-top: 1px solid $grey
+    display: flex
+    justify-content: space-between
+
+.footer-top
   display: flex
   flex-direction: column
 
@@ -304,17 +346,57 @@ input
 .media-icon:not(:last-child)
   margin-right: 16px
 
-.footer
-  &__content
-    gap: 384px
+.column //stretch
+  width: 134px
 
-    &__columns
-      display: flex
-      justify-content: flex-end
-      align-items: flex-start
+  &__item
+    display: flex
+    @include font-properties(14px, 400, 22px)
+    color: $footer-color
+    gap: 12px
+
+.list-column
+  display: flex
+  flex-direction: column
+
+.inner-list
+  display: flex
+  flex-direction: column
+  align-self: stretch
+
+.first-item
+  margin-bottom: 16px
+  @include font-properties(14px, 600, 24px)
+  align-self: stretch
+
+.bottom-buttons
+  display: flex
+  gap: 32px
+
+.language
+  display: flex
+  align-items: center
+  gap: 8px
+
+.language-left
+  display: flex
+  justify-content: flex-end
+  align-items: center
+
+.currency
+  display: flex
+  justify-content: flex-end
+  align-items: center
+
+.bottom-text
+  color: $footer-color
+  @include font-properties(14px,400, 22px)
 
 
-.column
+
+
+
+
 
 
 
