@@ -1,28 +1,29 @@
-@mixin position($top-bottom: 52px, $sides: 52px)
+@mixin position($top-bottom: 52px, $sides: 52px) //52px
   padding: $top-bottom $sides
 
-@mixin position-mobile($top-bottom: 8px, $sides: 16px)
+@mixin position-mobile($top-bottom: 2.13vw, $sides: 4.27vw) //8px , 16px
   padding: $top-bottom $sides
 
-@mixin font-properties($font-size: 16px, $font-weight: 400, $line-height: 26px)
-  font-size: $font-size
+@mixin font-properties($font-size: 16px, $font-weight: 400, $line-height: 26px) //16px, 26px
+  font-size:  $font-size
   font-weight: $font-weight
   line-height: $line-height
 
-@mixin device ($breakpoint)
-  @if $breakpoint == desktop
-    @media (min-width: $breakpoint-desktop-min > 1024)
-      @content
+@mixin desktop
+  @media screen and (min-width: $breakpoint-desktop-min)
+    @content
 
-  @if $breakpoint == mobile
-    @media (max-width: $breakpoint-mobile-max < 1024)
-      @content
+@mixin mobile
+  @media screen and (max-width: $breakpoint-mobile-max) and (min-width: $breakpoint-mobile-min )
+    @content
 
+$breakpoint-mobile-min: 324px
 $breakpoint-desktop-min: 1024px
 $breakpoint-mobile-max: 1024px
 $grey: #D0D5DD
 $background-color: #F9FAFB
 $footer-color: #5F6980
+
 
 
 
@@ -37,83 +38,147 @@ $footer-color: #5F6980
   color: #282828
 
 header
-  @include font-properties(14px, 600, 24px)
+  @include font-properties(0.73vw, 600, 1.25vw) //14px, 24px
 
 h6
-  @include font-properties(20px, 600, 28px)
+  @include font-properties(1.04vw, 600, 1.46vw) //20px, 28px
 
-h4
-  @include font-properties(42px, 600, 54px)
+  @include mobile
+    @include font-properties(5.33vw, 600, 1.46vw)
+
+h5
+  @include font-properties(1.77vw, 600, 2.08vw) //34px, 40px
   letter-spacing: -0.4px
 
+  @include mobile
+    @include font-properties(7.5vw, 600, 8.67vw)
+
+h4
+  @include font-properties(2.19vw, 600, 2.81vw) //42px, 54px
+  letter-spacing: -0.4px
+
+  @include mobile
+    @include font-properties(9.07vw, 600, 10.67vw)
+
 h3
-  @include font-properties(54px, 600, 62px)
+  @include font-properties(3.61vw, 600, 4.14vw) //54px, 62px
   align-self: stretch
   letter-spacing: -1px
+  @include mobile
+    @include font-properties(7.40vw ,600 ,9.53vw)
 
 input
   border: none
 
 a
-  @include font-properties(18px, 600, 32px)
+  @include font-properties(18px, 600, 32px) //
   letter-spacing: -0.4px
   border-bottom: 1px solid
 
 .container
-  @include device(desktop)
-    @include position()
 
-    &__info
-      display: flex
-      flex-direction: column
-      justify-content: center
-      align-items: flex-start
-      width: 488px
+  &__info
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: flex-start
+    width: 90% //488px
 
-    &__image
-      margin-right: 82px
+  &__image
+    @include desktop
+      margin-right: 4.27vw //82px
 
-  @include device(mobile)
+  @include mobile
     @include position-mobile()
-// --------
+
+  @include desktop
+    @include position()
 
 
 .navigation-bar
-
-  @include position(16px)
   display: flex
   justify-content: space-between
 
+  @include desktop
+    @include position(1.07vw) //16px
+
+  @include mobile
+    @include position-mobile()
 
 
 .navigation
-  @include position(10px, 0)
+  @include position(0.67vw, 0) //10px
   display: flex
   align-items: center
-  gap: 40px
+  gap: 2.67vw
 
   &__item
     display: flex
     align-items: center
 
+  @include mobile
+    visibility: hidden
+    display: none
+
+
 .icons
   display: inline-flex
   align-items: center
-  gap: 20px
+  gap: 1.36vw
+
+
+.desktop-item
+  @include mobile
+    display: none
+    visibility: hidden
+
+
+.mobile-item
+  @include desktop
+    display: none
+    visibility: hidden
+
 
 .content-container
   position: relative
   background-color: $background-color
 
   &__inners
+    @include mobile
+      flex-wrap: wrap
+      gap: 6.40vw
+      justify-content: center
     display: flex
 
+  @include mobile
+    background-color: transparent
+
+
+.content-image
+  @include desktop
+    width: 50.10vw
+    height: 47.65vw
+
+  @include mobile
+    width: 100%
+    height: auto
+
+
 .info
+  &__text-description
+    @include mobile
+      @include font-properties(3.73vw, 400, 5.87vw)
+    margin-bottom: 24px
+    text-align: center
 
   &__text
     display: flex
     flex-direction: column
-    gap: 28px
+    gap: 1.91vw
+    width: 70%
+    @include mobile
+      align-self: center
+      width: 90%
 
     &-main
       display: flex
@@ -127,8 +192,13 @@ a
     display: flex
     align-self: flex-start
 
+    @include mobile
+      margin-bottom: 3.20vw
+
+
 .brand-title
   @include font-properties($font-weight: 600)
+
 
 .content-container__arrows
   display: flex
@@ -136,9 +206,12 @@ a
   bottom: 320px
   margin: 0 28px
 
-  //:(
-.arrows
+  @include mobile
+    visibility: hidden
+    display: none
 
+
+.arrows
   &__right-button
     position: absolute
     left: 1367px
@@ -146,33 +219,82 @@ a
   &__left-button
     transform: rotateZ(180deg)
 
+
 .brands-container
-  position: relative
+  display: block
+  align-items: center
+
+
+.logo-container
+  display: flex
+  justify-content: space-between
+
+  @include desktop
+    border-top: 1px solid $grey
+    border-bottom: 1px solid $grey
+
 
 .brands-content
-  border-top: 1px solid $grey
-  border-bottom: 1px solid $grey
+  @include mobile
+    display: flex
+    flex-wrap: wrap
+    width: 80%
+    @include position-mobile(40px)
+
+
+.navigation-dots
+  display: flex
+  justify-content: center
+
+
+.dots
+  display: flex
+  align-self: center
+  gap: 10px
+
 
 .logos
+  flex-wrap: wrap
   display: flex
   justify-content: center
   align-items: center
-  margin: 56px 0
+  margin: 4.47vw 0
+  gap: 6.60vw
 
   &__item
-    margin-right: 48px
+    @include mobile
+      flex-basis: 35%
+
+
+.logo
+  @include mobile
+    width: 25.57vw
+
 
 .logo-arrows
-  bottom: 95px
-  left: 10px
+  display: flex
+  align-items: center
 
-//:(
+
+.banner-grid
+  @include mobile
+    @include position-mobile($top-bottom: 3.20vw)
+
+
 .cards
+  gap: 32px
   display: flex
   justify-content: center
 
-  &__item:not(:last-child)
-    margin-right: 32px
+  @include mobile
+    flex-wrap: wrap
+
+  &__item
+    @include mobile
+      display: flex
+      flex-direction: column
+      align-items: center
+      flex: 1 1 50%
 
 .card-info
   text-align: center
@@ -181,32 +303,62 @@ a
   &__span
     color: #5F6980
 
+
+.grid-image
+  width: 100%
+  height: auto
+
+  @include mobile
+    width: 91.47vw
+    height: auto
+
+
+
 .container-inners
   display: flex
-  align-self: stretch
-  gap: 114px
+  gap: 7.76vw
   background-color: $background-color
 
-.sale-info
-  display: flex
-  flex-direction: column
-  justify-content: center
-  align-items: flex-start
-  gap: 32px
-  align-self: stretch
+  @include mobile
+    align-items: center
+    flex-direction: column
+    flex-wrap: wrap
+    gap: 4.27vw
 
 
-.sale-text p
+.container-inners
+  @include mobile
+    flex-wrap: wrap
+    justify-content: center
+
+
+.sale
+  &__info
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: flex-start
+    gap: 2.18vw
+
+
+.sale-image
+  width: 100%
+
+
+.sale-text
   margin-bottom: 24px
-  @include font-properties(18px,400, 30px)
+  @include font-properties(1.23vw,400, 2.04vw)
 
-.sale-text span
+  @include mobile
+    @include font-properties(3.73vw,300, 5.87vw)
+    color: #5F6980
+
+
+
+.sale-brand-title
   margin-bottom: 8px
   @include font-properties($font-weight: 600)
 
-.sale-text h5
-  @include font-properties(34px, 600, 40px)
-  letter-spacing: -0.4px
 
 .sale-button
   background-color: #282828
@@ -222,6 +374,11 @@ a
     @include font-properties(18px, 600, 32px)
     letter-spacing: -0.4px
 
+
+.button
+  padding-bottom: 24px
+
+
 .container-info
   justify-content: center
   align-items: center
@@ -233,35 +390,52 @@ a
   border-radius: 10px
   flex-shrink: 0
 
+
 .info__text
   display: inline-flex
   flex-direction: column
   justify-content: center
   align-items: center
 
-.info__text span
-  @include font-properties(18px, 400, 30px)
-  margin-bottom: 24px
 
 .form-inners
+  height: 52px
+  width: 100%
+  display: flex
+  @include mobile
+    flex-direction: column
+    gap: 12px
+    padding-bottom: 117px
+
+
+.inners-input
   display: flex
   align-items: center
   border-bottom: 1px solid $grey
   height: 52px
   width: 100%
 
+
 .form
   color: #9D9FA1
   width: 100%
   margin: 0 8px
 
+
 .form-button
   @include font-properties(16px, 600, 28px)
   background-color: white
   border: none
+  border-bottom: 1px solid $grey
+
+  @include mobile
+    background-color: #282828
+    color: #FFFFFF
+    @include position(8px, 20px)
+    border-radius: 6px
+
 
 .banner
-
   &__container
     display: flex
     flex-direction: column
@@ -271,13 +445,19 @@ a
     position: relative
 
     &__info
-      position: absolute
-      bottom: 170px
-      left: 430px
       justify-content: center
       align-items: center
       display: inline-flex
       flex-direction: column
+      position: absolute
+
+      @include desktop
+        bottom: 170px
+        left: 430px
+
+      @include mobile
+        bottom: 90px
+
 
 .info-description
   display: flex
@@ -289,11 +469,17 @@ a
     color: white
     text-align: center
 
+    @include mobile
+      @include font-properties(34px, 600, 40px)
+
   &__text
     @include font-properties(18px, 400, 30px)
     text-align: center
     color: white
     margin-bottom: 24px
+
+    @include mobile
+      @include font-properties(14px, 400, 22px)
 
   &__button
     @include font-properties(18px, 600, 32px)
@@ -301,8 +487,8 @@ a
     border-bottom: 1px solid
     color: white
 
-.footer
 
+.footer
   &__container
     background-color: $background-color
     padding-top: 72px
@@ -313,11 +499,17 @@ a
     gap: 384px
     margin-bottom: 72px
 
+    @include mobile
+      justify-content: center
+
   &__list
     gap: 120px
     display: flex
-    justify-content: flex-end
-    align-items: flex-start
+    align-items: flex-end
+
+    @include mobile
+      display: none
+      visibility: hidden
 
   &__bottom
     padding-top: 24px
@@ -325,72 +517,115 @@ a
     display: flex
     justify-content: space-between
 
+
 .footer-top
   display: flex
   flex-direction: column
+  gap: 24px
+
 
 .left__description
   display: flex
   flex-direction: column
   align-items: flex-start
   align-self: stretch
-  margin-bottom: 24px
+
 
 .description__image
   margin-bottom: 16px
 
+
 .description__text
   align-self: stretch
+  width: 310px
   color: #475467
+
 
 .media-icon:not(:last-child)
   margin-right: 16px
 
-.column //stretch
+
+.column
   width: 134px
 
   &__item
     display: flex
     @include font-properties(14px, 400, 22px)
     color: $footer-color
-    gap: 12px
+
 
 .list-column
   display: flex
   flex-direction: column
 
+
 .inner-list
+  gap: 12px
   display: flex
   flex-direction: column
   align-self: stretch
 
+
 .first-item
   margin-bottom: 16px
   @include font-properties(14px, 600, 24px)
-  align-self: stretch
+
 
 .bottom-buttons
   display: flex
   gap: 32px
+
 
 .language
   display: flex
   align-items: center
   gap: 8px
 
+
 .language-left
   display: flex
   justify-content: flex-end
   align-items: center
+
 
 .currency
   display: flex
   justify-content: flex-end
   align-items: center
 
+
 .bottom-text
   color: $footer-color
   @include font-properties(14px,400, 22px)
+
+
+.menu-item
+  @include position(10px, 0)
+  width: 100%
+  display: flex
+  justify-content: space-between
+  border-bottom: 1px solid $grey
+  @include font-properties(14px, 600, 24px)
+
+
+.language-title
+  @include font-properties(14px,600, 24px)
+
+
+.currency-title
+  @include font-properties(14px,600, 24px)
+
+
+.mobile-buttons
+  justify-content: center
+
+
+.left__media-icons
+  @include mobile
+    gap: 16px
+    align-items: center
+    display: flex
+    flex-direction: column
 
 
 

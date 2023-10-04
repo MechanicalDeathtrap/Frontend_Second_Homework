@@ -26,17 +26,20 @@
             <span class="navigation__item">Pages</span>
         </nav>
         <div class="icons">
-            <div class="icons__item">
+            <div class="icons__item desktop-item">
                 <img src="./images/search.svg" alt="search">
             </div>
-            <div class="icons__item">
+            <div class="icons__item desktop-item">
                 <img src="./images/user.svg" alt="user">
             </div>
-            <div class="icons__item">
+            <div class="icons__item desktop-item">
                 <img src="./images/heart.svg" alt="heart">
             </div>
-            <div class="icons__item">
+            <div class="icons__item desktop-item">
                 <img src="./images/bag.svg" alt="bag">
+            </div>
+            <div class="icons__item mobile-item">
+                <img src="./images/Hamburger.svg" alt="menu">
             </div>
         </div>
     </div>
@@ -46,7 +49,7 @@
     <section class="content-container">
         <div class="content-container__inners">
             <div class="container__image">
-                <img src="./images/Paste%20image.svg" alt="paste-image">
+                <img src="./images/Paste%20image.svg" alt="paste-image" class="content-image">
             </div>
             <div class="container__info">
                 <div class="info__text">
@@ -64,56 +67,71 @@
             </div>
         </div>
 
-        <div class="content-container__arrows">
+        <div class="content-container__arrows desktop-item">
             <div class="arrows__left-button">
                 <img src="./images/Button.svg" alt="button" class="left-button">
-
             </div>
-            <div class="arrows__right-button">
+            <div class="arrows__right-button desktop-item">
                 <img src="./images/Button.svg" alt="button" class="right-button">
-
             </div>
         </div>
     </section>
     <section class="brands-container container">
-        <div class="brands-content">
-            <div class="logos">
-                <div class="logos__item">
-                    <img src="./images/nike.svg" alt="logo-nike">
+        <div class="logo-container">
+            <div class="desktop-item logo-arrows">
+                <div class="arrows__left-button">
+                    <img src="./images/Button.svg" alt="button" class="left-button">
                 </div>
-                <div class="logos__item">
-                    <img src="./images/hush.svg" alt="logo-hush">
+            </div>
+            <div class="brands-content">
+                <div class="logos">
+                    <div class="logos__item">
+                        <img src="./images/nike.svg" alt="logo-nike" class="logo">
+                    </div>
+                    <div class="logos__item">
+                        <img src="./images/hush.svg" alt="logo-hush" class="logo">
+                    </div>
+                    <div class="logos__item">
+                        <img src="./images/puma.svg" alt="logo-puma" class="logo">
+                    </div>
+                    <div class="logos__item">
+                        <img src="./images/shoei.svg" alt="logo-shoei" class="logo">
+                    </div>
+                    <div class="logos__item">
+                        <img src="./images/marc.svg" alt="logo-marc" class="logo">
+                    </div>
+                    <div class="logos__item">
+                        <img src="./images/supreme.svg" alt="logo-supreme" class="logo">
+                    </div>
                 </div>
-                <div class="logos__item">
-                    <img src="./images/puma.svg" alt="logo-puma">
-                </div>
-                <div class="logos__item">
-                    <img src="./images/shoei.svg" alt="logo-shoei">
-                </div>
-                <div class="logos__item">
-                    <img src="./images/marc.svg" alt="logo-marc">
-                </div>
-                <div class="logos__item">
-                    <img src="./images/supreme.svg" alt="logo-supreme">
+            </div>
+            <div class="desktop-item logo-arrows">
+                <div class="arrows__right">
+                    <img src="./images/Button.svg" alt="button" class="right-button">
+
                 </div>
             </div>
         </div>
-        <div class="content-container__arrows logo-arrows">
-            <div class="arrows__left-button">
-                <img src="./images/Button.svg" alt="button" class="left-button">
-
-            </div>
-            <div class="arrows__right-button">
-                <img src="./images/Button.svg" alt="button" class="right-button">
-
+        <div class="mobile-item navigation-dots">
+            <div class="dots">
+                <div class="dot">
+                    <img src="./images/Navigation%20Dots.svg" alt="big dot" class="dot">
+                </div>
+                <div class="dot">
+                    <img src="./images/Navigation%20Dots%20small.svg" alt="dot">
+                </div>
+                <div class="dot">
+                    <img src="./images/Navigation%20Dots%20small.svg" alt="dot">
+                </div>
             </div>
         </div>
+
     </section>
     <section class="banner-grid container">
         <div class="cards">
             <div class="cards__item">
                 <div class="card-image">
-                    <img src="./images/Image%20Placeholder.svg" alt="bag">
+                    <img src="./images/Image%20Placeholder.svg" alt="bag" class="grid-image">
                 </div>
                 <div class="card-info">
                     <span class="card-info__span"> Featured </span>
@@ -122,7 +140,7 @@
             </div>
             <div class="cards__item">
                 <div class="card-image">
-                    <img src="./images/Paste%20image1.svg" alt="bag">
+                    <img src="./images/Paste%20image1.svg" alt="bag" class="grid-image">
                 </div>
                 <div class="card-info">
                     <span class="card-info__span"> New </span>
@@ -131,7 +149,7 @@
             </div>
             <div class="cards__item">
                 <div class="card-image">
-                    <img src="./images/Paste%20image2.svg" alt="bag">
+                    <img src="./images/Paste%20image2.svg" alt="bag" class="grid-image">
                 </div>
                 <div class="card-info">
                     <span class="card-info__span"> Handmade </span>
@@ -142,21 +160,24 @@
     </section>
     <section class="sale-container container">
         <div class="container-inners">
-            <div class="sale-image">
-                <img src="./images/sale%20image.svg" alt="sale">
+            <div class="sale__image">
+                <img src="./images/sale%20image.svg" alt="sale" class="sale-image">
             </div>
-            <div class="sale-info">
-                <div class="sale-text">
-                    <span class="brand-title">EXLUSIVE</span>
+            <div class="sale__info">
+                <div class="sale__text">
+                    <span class="sale-brand-title">EXLUSIVE</span>
                     <h3>50% OFF</h3>
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit
+                    <p class="sale-text">Sed ut perspiciatis unde omnis iste natus error sit
                         <br>
                         voluptatem accusantium doloremque</p>
                     <h5>05d : 11h : 23m : 02s</h5>
                 </div>
-                <button class="sale-button">
-                    <span class="sale-button__text">Shop Now</span>
-                </button>
+                <div class="button">
+                    <button class="sale-button">
+                        <span class="sale-button__text">Shop Now</span>
+                    </button>
+                </div>
+
             </div>
         </div>
     </section>
@@ -164,10 +185,12 @@
         <div class="container-info">
             <div class="info__text">
                 <h4>Join our newsletter</h4>
-                <span>Enjoy big discounts and latest updates right to your inbox</span>
+                <span class="info__text-description">Enjoy big discounts and latest updates right to your inbox</span>
                 <div class="form-inners">
-                    <img src="./images/email.svg" alt="email">
-                    <input type="email" class="form" placeholder="Email address">
+                    <div class="inners-input">
+                        <img src="./images/email.svg" alt="email">
+                        <input type="email" class="form" placeholder="Email address">
+                    </div>
                     <button class="form-button">Signup</button>
                 </div>
             </div>
@@ -176,7 +199,8 @@
     <section class="banner__container container">
         <div class="banner__inners">
             <div class="banner__inners__image">
-                <img src="./images/banner.svg" alt="banner">
+                <img src="./images/banner.svg" alt="banner-image" class="desktop-item">
+                <img src="./images/banner-mobile.svg" alt="banner-image" class="mobile-item">
             </div>
             <div class="banner__inners__info">
                 <div class="info-description">
@@ -202,15 +226,45 @@
         <div class="footer-top">
             <div class="left__description">
                 <img src="./images/Branding.svg" alt="logo" class="description__image">
-                <span class="description__text">Phosf luorescently engage worldwide
-                    <br>
-                    method process shopping.</span>
+                <span class="description__text">Phosf luorescently engage&nbsp;worldwide method&nbsp;process shopping.</span>
+            </div>
+            <div class="mobile-item menu">
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <span class="item-title">Product</span>
+                            <img src="./images/chevron-down.svg" alt="arrow" class="menu-arrow">
+                        </li>
+                        <li class="menu-item">
+                            <span class="item-title">Information</span>
+                            <img src="./images/chevron-down.svg" alt="arrow" class="menu-arrow">
+                        </li>
+                        <li class="menu-item">
+                            <span class="item-title">Support</span>
+                            <img src="./images/chevron-down.svg" alt="arrow" class="menu-arrow">
+                        </li>
+                    </ul>
+            </div>
+            <div class="mobile-item bottom-buttons mobile-buttons">
+                <div class="language">
+                    <img src="./images/Flags.svg" alt="flag">
+                    <div class="language-left">
+                        <span class="language-title">English</span>
+                        <img src="./images/chevron-down.svg" alt="arrow">
+                    </div>
+                </div>
+                <div class="currency">
+                    <span class="currency-title">USD</span>
+                    <img src="./images/chevron-down.svg" alt="arrow">
+                </div>
             </div>
             <div class="left__media-icons">
-                <img src="./images/facebook.svg" alt="facebook" class="media-icon">
-                <img src="./images/insta.svg" alt="instagram" class="media-icon">
-                <img src="./images/twitter.svg" alt="twitter" class="media-icon">
-                <img src="./images/mail.svg" alt="mail" class="media-icon">
+                <div class="icons">
+                    <img src="./images/facebook.svg" alt="facebook" class="media-icon">
+                    <img src="./images/insta.svg" alt="instagram" class="media-icon">
+                    <img src="./images/twitter.svg" alt="twitter" class="media-icon">
+                    <img src="./images/mail.svg" alt="mail" class="media-icon">
+                </div>
+                <span class="bottom-text mobile-item">© 2088 Nayzak Design</span>
             </div>
         </div>
         <div class="footer__list">
@@ -228,35 +282,39 @@
             <div class="column">
                 <ul class="list-column">
                     <li class="column__item first-item"><span>Information</span></li>
-                    <li class="column__item">Privacy</li>
-                    <li class="column__item">Cookies</li>
-                    <li class="column__item">Terms</li>
-                    <li class="column__item">Security</li>
+                    <ul class="inner-list">
+                        <li class="column__item">Privacy</li>
+                        <li class="column__item">Cookies</li>
+                        <li class="column__item">Terms</li>
+                        <li class="column__item">Security</li>
+                    </ul>
                 </ul>
             </div>
             <div class="column">
                 <ul class="list-column">
                     <li class="column__item first-item"><span>Support</span></li>
-                    <li class="column__item">Updates</li>
-                    <li class="column__item">Discord</li>
-                    <li class="column__item">Startups</li>
-                    <li class="column__item">Contact</li>
+                    <ul class="inner-list">
+                        <li class="column__item">Updates</li>
+                        <li class="column__item">Discord</li>
+                        <li class="column__item">Startups</li>
+                        <li class="column__item">Contact</li>
+                    </ul>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="footer__bottom">
+    <div class="footer__bottom desktop-item">
         <span class="bottom-text">© 2088 Nayzak Design</span>
-        <div class="bottom-buttons">
+        <div class="bottom-buttons ">
             <div class="language">
                 <img src="./images/Flags.svg" alt="flag">
                 <div class="language-left">
-                    <span>English</span>
+                    <span class="language-title">English</span>
                     <img src="./images/chevron-down.svg" alt="arrow">
                 </div>
             </div>
             <div class="currency">
-                <span>USD</span>
+                <span class="currency-title">USD</span>
                 <img src="./images/chevron-down.svg" alt="arrow">
             </div>
         </div>
