@@ -38,30 +38,30 @@ $footer-color: #5F6980
   color: #282828
 
 header
-  @include font-properties(0.73vw, 600, 1.25vw) //14px, 24px
+  @include font-properties(0.95vw, 600, 1.63vw) //14px, 24px
 
 h6
-  @include font-properties(1.04vw, 600, 1.46vw) //20px, 28px
+  @include font-properties(1.36vw, 600, 1.91vw) //20px, 28px
 
   @include mobile
     @include font-properties(5.33vw, 600, 1.46vw)
 
 h5
-  @include font-properties(1.77vw, 600, 2.08vw) //34px, 40px
+  @include font-properties(2.31vw, 600, 2.72vw) //34px, 40px
   letter-spacing: -0.4px
 
   @include mobile
     @include font-properties(7.5vw, 600, 8.67vw)
 
 h4
-  @include font-properties(2.19vw, 600, 2.81vw) //42px, 54px
+  @include font-properties(2.86vw, 600, 3.68vw) //42px, 54px
   letter-spacing: -0.4px
 
   @include mobile
     @include font-properties(9.07vw, 600, 10.67vw)
 
 h3
-  @include font-properties(3.61vw, 600, 4.14vw) //54px, 62px
+  @include font-properties(3.68vw, 600, 4.22vw) //54px, 62px
   align-self: stretch
   letter-spacing: -1px
   @include mobile
@@ -126,6 +126,9 @@ a
   align-items: center
   gap: 1.36vw
 
+  @include mobile
+    gap: 5.33vw
+
 
 .desktop-item
   @include mobile
@@ -166,16 +169,20 @@ a
 
 .info
   &__text-description
+    @include font-properties(1.23vw, 400, 2.04vw)
+    align-self: stretch
+    margin-bottom: 1.63vw
+    text-align: center
+
     @include mobile
       @include font-properties(3.73vw, 400, 5.87vw)
-    margin-bottom: 24px
-    text-align: center
 
   &__text
     display: flex
     flex-direction: column
     gap: 1.91vw
-    width: 70%
+    width: 40%
+
     @include mobile
       align-self: center
       width: 90%
@@ -281,6 +288,11 @@ a
     @include position-mobile($top-bottom: 3.20vw)
 
 
+.banner-image
+  width: 90.95vw
+  height: auto
+
+
 .cards
   gap: 32px
   display: flex
@@ -295,6 +307,7 @@ a
       flex-direction: column
       align-items: center
       flex: 1 1 50%
+
 
 .card-info
   text-align: center
@@ -402,6 +415,7 @@ a
   height: 52px
   width: 100%
   display: flex
+  
   @include mobile
     flex-direction: column
     gap: 12px
@@ -452,8 +466,8 @@ a
       position: absolute
 
       @include desktop
-        bottom: 170px
-        left: 430px
+        bottom: 11.57vw //170px
+        left: 29.27vw //430px
 
       @include mobile
         bottom: 90px
@@ -491,19 +505,19 @@ a
 .footer
   &__container
     background-color: $background-color
-    padding-top: 72px
-    padding-bottom: 32px
+    padding-top: 4.90vw //72px
+    padding-bottom: 2.18vw //32px
 
   &__content
     display: flex
-    gap: 384px
-    margin-bottom: 72px
+    gap: 26.14% //384px
+    margin-bottom: 4.90vw //72px
 
     @include mobile
       justify-content: center
 
   &__list
-    gap: 120px
+    gap: 8.17vw //120px 8.17vw
     display: flex
     align-items: flex-end
 
@@ -539,10 +553,6 @@ a
   align-self: stretch
   width: 310px
   color: #475467
-
-
-.media-icon:not(:last-child)
-  margin-right: 16px
 
 
 .column
@@ -600,7 +610,7 @@ a
 
 
 .menu-item
-  @include position(10px, 0)
+  @include position(0.68vw, 0)
   width: 100%
   display: flex
   justify-content: space-between

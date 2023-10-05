@@ -10,15 +10,15 @@
 }
 
 header {
-  font-size: 0.73vw;
+  font-size: 0.95vw;
   font-weight: 600;
-  line-height: 1.25vw;
+  line-height: 1.63vw;
 }
 
 h6 {
-  font-size: 1.04vw;
+  font-size: 1.36vw;
   font-weight: 600;
-  line-height: 1.46vw;
+  line-height: 1.91vw;
 }
 @media screen and (max-width: 1024px) and (min-width: 324px) {
   h6 {
@@ -29,9 +29,9 @@ h6 {
 }
 
 h5 {
-  font-size: 1.77vw;
+  font-size: 2.31vw;
   font-weight: 600;
-  line-height: 2.08vw;
+  line-height: 2.72vw;
   letter-spacing: -0.4px;
 }
 @media screen and (max-width: 1024px) and (min-width: 324px) {
@@ -43,9 +43,9 @@ h5 {
 }
 
 h4 {
-  font-size: 2.19vw;
+  font-size: 2.86vw;
   font-weight: 600;
-  line-height: 2.81vw;
+  line-height: 3.68vw;
   letter-spacing: -0.4px;
 }
 @media screen and (max-width: 1024px) and (min-width: 324px) {
@@ -57,9 +57,9 @@ h4 {
 }
 
 h3 {
-  font-size: 3.61vw;
+  font-size: 3.68vw;
   font-weight: 600;
-  line-height: 4.14vw;
+  line-height: 4.22vw;
   align-self: stretch;
   letter-spacing: -1px;
 }
@@ -143,6 +143,11 @@ a {
   align-items: center;
   gap: 1.36vw;
 }
+@media screen and (max-width: 1024px) and (min-width: 324px) {
+  .icons {
+    gap: 5.33vw;
+  }
+}
 
 @media screen and (max-width: 1024px) and (min-width: 324px) {
   .desktop-item {
@@ -192,7 +197,11 @@ a {
 }
 
 .info__text-description {
-  margin-bottom: 24px;
+  font-size: 1.23vw;
+  font-weight: 400;
+  line-height: 2.04vw;
+  align-self: stretch;
+  margin-bottom: 1.63vw;
   text-align: center;
 }
 @media screen and (max-width: 1024px) and (min-width: 324px) {
@@ -206,7 +215,7 @@ a {
   display: flex;
   flex-direction: column;
   gap: 1.91vw;
-  width: 70%;
+  width: 40%;
 }
 @media screen and (max-width: 1024px) and (min-width: 324px) {
   .info__text {
@@ -326,6 +335,11 @@ a {
   .banner-grid {
     padding: 3.2vw 4.27vw;
   }
+}
+
+.banner-image {
+  width: 90.95vw;
+  height: auto;
 }
 
 .cards {
@@ -522,8 +536,8 @@ a {
 }
 @media screen and (min-width: 1024px) {
   .banner__inners__info {
-    bottom: 170px;
-    left: 430px;
+    bottom: 11.57vw;
+    left: 29.27vw;
   }
 }
 @media screen and (max-width: 1024px) and (min-width: 324px) {
@@ -575,13 +589,13 @@ a {
 
 .footer__container {
   background-color: #F9FAFB;
-  padding-top: 72px;
-  padding-bottom: 32px;
+  padding-top: 4.9vw;
+  padding-bottom: 2.18vw;
 }
 .footer__content {
   display: flex;
-  gap: 384px;
-  margin-bottom: 72px;
+  gap: 26.14%;
+  margin-bottom: 4.9vw;
 }
 @media screen and (max-width: 1024px) and (min-width: 324px) {
   .footer__content {
@@ -589,7 +603,7 @@ a {
   }
 }
 .footer__list {
-  gap: 120px;
+  gap: 8.17vw;
   display: flex;
   align-items: flex-end;
 }
@@ -627,10 +641,6 @@ a {
   align-self: stretch;
   width: 310px;
   color: #475467;
-}
-
-.media-icon:not(:last-child) {
-  margin-right: 16px;
 }
 
 .column {
@@ -694,7 +704,7 @@ a {
 }
 
 .menu-item {
-  padding: 10px 0;
+  padding: 0.68vw 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
